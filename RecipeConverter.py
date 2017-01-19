@@ -3,6 +3,7 @@
 #1-22-2017
 
 #Gets Original Recipe amounts in Cups
+print "-- Original Recipe --"
 print "Enter the amount of Flour (cups):",
 flour = raw_input()
 print "Enter the amount of water (cups):",
@@ -22,17 +23,10 @@ newYeast = float(yeast) * float(size)
 
 #Convert into grams
 gramFlour = float(newFlour) * 120
-gramWater = float(newWater) * 236.59
-gramSalt = float(newSalt) * 2
+gramWater = float(newWater) * 236
+gramSalt = float(newSalt) * 5
 gramYeast = float(newYeast) * 3
 
-#Print Original Recipe
-print 
-print "-- Original Recipe --"
-print "BreadFlour: %s cups." % flour
-print "Water: %s cups." % water
-print "Salt: %s teaspoons." % salt 
-print "Yeast: %s teaspoons." % yeast
 
 #Print Data cups
 print 
@@ -41,6 +35,7 @@ print "BreadFlour: %s cups." % newFlour
 print "Water: %s cups." % newWater
 print "Salt: %s teaspoons." % newSalt 
 print "Yeast: %s teaspoons." % newYeast
+print "Happy Baking!"
 
 #Print Data grams
 print 
@@ -49,3 +44,4 @@ print "BreadFlour: %.2f g." % gramFlour
 print "Water: %.2f g." % gramWater
 print "Salt: %.2f g." % gramSalt
 print "Yeast: %.2f g." % gramYeast
+print "Happy Baking!"
