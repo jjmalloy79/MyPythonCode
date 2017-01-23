@@ -13,6 +13,7 @@ def get_int(prompt):
 #removes cookies
 def remove_cookie(s):
 # this sees if cookies is in string
+    s = s.upper()
     if s.find("COOKIES") != -1:
 # if cookies is in the string it replaces it
         s = s.replace("COOKIES", "_______")
