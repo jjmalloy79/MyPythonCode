@@ -47,7 +47,7 @@ def main():
 #varibles
     start1 = 0
     stop2 = 116
-    percent = raw_input("Please enter the percent you want to analysis (e.g. 70  for 70% ")
+    percent = raw_input("Please enter the percent you want to analysis (e.g. 70  for 70%) ")
     stop1 = int((float(percent) / 100) * 116)
     start2 = stop1
     temp = readTemps()
