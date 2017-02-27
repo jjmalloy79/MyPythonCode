@@ -39,7 +39,7 @@ def printWinner(Tom, Sally, Fred, picked):
            return False
 #this gets what the users wants to bet
 def getBet(money):
-    print ("How much do you want to bet? (cash = %s)", money)
+    print "How much do you want to bet? (cash = %s)", money
     return int(raw_input())
 #this will get user money after contest
 def totalMoney(money, gain, bet):
@@ -63,6 +63,7 @@ def main():
         hotdogsSally = 0
         hotdogsFred = 0
         maxDog = 50
+        eat = True
         #gets users guess on who will win
         playerPicked = Epic.userString("Pick a winner (Tom, Sally, or Fred)")
         bet = getBet(money)
@@ -71,7 +72,7 @@ def main():
   # slows down contest 
         time.sleep(2)
  # This while loop runs until a contestant has eaten more than 50 hotdogs
-        while(hotdogsFred < maxDog and hotdogsSally < maxDog and hotdogsFred < maxDog ):
+        while(eat):
             print "chomp... chomp... chomp..."
             hotdogsFred = getsEatenHotDogs(hotdogsFred)
             hotdogsSally= getsEatenHotDogs(hotdogsSally)
@@ -82,6 +83,10 @@ def main():
             printOut("Sally", hotdogsSally)
             printOut("Fred", hotdogsFred)
             print ""
+            if(hotdogsFred < maxDog and hotdogsSally < maxDog and hotdogsFred < maxDog ):
+                eat = True
+            else:
+                eat = False
       #slows down contest      
             time.sleep(3)
       #This gets the winner of the contest and see if player choosed the winner
@@ -89,5 +94,5 @@ def main():
         money = totalMoney(money, gain, bet)
         if money == 0:
             run = False
-    
+    print "Game Over!"
 main()
