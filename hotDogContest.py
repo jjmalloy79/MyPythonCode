@@ -39,7 +39,7 @@ def printWinner(Tom, Sally, Fred, picked):
            return False
 #this gets what the users wants to bet
 def getBet(money):
-    print "How much do you want to bet? (cash = %s)", money
+    print "How much do you want to bet? (cash = %s)" % money
     return int(raw_input())
 #this will get user money after contest
 def totalMoney(money, gain, bet):
