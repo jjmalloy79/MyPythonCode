@@ -83,7 +83,7 @@ def main():
             printOut("Sally", hotdogsSally)
             printOut("Fred", hotdogsFred)
             print ""
-            if(hotdogsFred < maxDog and hotdogsSally < maxDog and hotdogsFred < maxDog ):
+            if(hotdogsFred <= maxDog and hotdogsSally <= maxDog and hotdogsFred <= maxDog ):
                 eat = True
             else:
                 eat = False
