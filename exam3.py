@@ -8,9 +8,8 @@ gameBoard = nameOfItems
 
 #shuffles deck
 def shuffleCards():
-    
+#randomizes game board    
     random.shuffle(gameBoard)
-    print gameBoard
     
 # adds a duplicate card from list
 def addCard():
