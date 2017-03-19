@@ -4,6 +4,7 @@ import Epic
 global nameOfItems
 nameOfItems = ["bird", "dog", "snake", "fish","cat","mouse","starfish","woodchuck","crab"]
 global gameBoard
+# sets gameboard with Items in game minus the duplicate card
 gameBoard = nameOfItems
 
 #shuffles deck
@@ -20,17 +21,21 @@ def addCard():
 #adds random word to list
     gameBoard.append(tempWord)
     
+# sees if user made a match   
 def match(pickOne, pickTwo):
+#if there is a match returns false to end game
     if(gameBoard[int(pickOne)] == (gameBoard[int(pickTwo)])):
         return False
     else: 
         return True
+        
 def main():
 # variables
     run = True
     numberOfTries = 0
 # calls addCard to add a word
     addCard()
+# calls shuffle to shuffle deck
     shuffleCards()
     
 #plays game until users gets a match
