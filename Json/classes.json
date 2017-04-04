@@ -1,0 +1,19 @@
+[
+{"Name" : "Mark Cohen", "Class" : ["Introduction to Computer Science", "Data Structures and Algorithms","Operating Systems",
+"Server-Side Software Development","Introduction to Parallel Computing"],"Grade" : ["B", "C+","B", "B","A"]},
+{"Name" : "Mike Dalton", "Class" : ["Programming in Java I", "Programming in Java II","Programming in Java III",
+"Database Development"],  "Grade" : ["B+" , "A-", "A-","A"]},
+{"Name" : "Jenny Dunning", "Class" : ["College Writing II"], "Grade" : ["A-"]},
+{"Name" : "David K Braden-Johnson", "Class" : ["Art and Philosophy"], "Grade" : ["A"]},
+{"Name" : "Mary Ellen Cohane", "Class" : ["Future of Food"], "Grade" : ["B+"]},
+{"Name" : "Daniel Connerton ", "Class" : ["Modern World Civilization"], "Grade" : ["A"]},
+{"Name" : "Duy D Nguyen", "Class" : ["Introduction to Statistics"], "Grade" : ["B"]},
+{"Name" : "James B Taylor", "Class" : ["U.S. Government and Public Policy"], "Grade" : ["A"]},
+{"Name" : "Gerol Petruzella", "Class" : ["Web Development"], "Grade" : ["A"]},
+{"Name" : "Michael Wheelock", "Class" : ["Networking Theory and Administration II"], "Grade" : ["B+"]},
+{"Name" : "Kailai Huang", "Class" : ["History of Japan"], "Grade" : ["B-"]},
+{"Name" : "David Eve", "Class" : ["Senior Project I"], "Grade" : ["A"]},
+{"Name" : "Ian Bergeron", "Class" : ["Network Security I"], "Grade" : ["A"]},
+{"Name" : "Paul LeSage", "Class" : ["Business Writing and Presentation"], "Grade" : ["A"]},
+{"Name" : "Anthony Daly", "Class" : ["Twentieth-Century Europe"], "Grade" : ["B"]}
+]
