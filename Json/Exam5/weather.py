@@ -1,20 +1,27 @@
 import Epic
 import urllib2
 import json
-#this is to verify that user wants to run again
+
+#this section is to verify that user wants to run program again
 def run(searchAgain):
+    #variable
     valid = False
+    # checks what user enter to what is suppose to be entered
     if(searchAgain == "y" or searchAgain == "n"):
         valid = True
     else:
         valid = False
+    #returns true or false if user followed direction correctly
     return valid
+    
 # this is the print out data
 def printOut(degrees, weather):
+    # prints out data of the location the user wanted in fahrenheit
     if(degrees.lower() == "f"):
         print "Here is the current weather for %s, %s" % (weather['location']['name'],weather['location']['region'])
         print "%s, and %s degrees (f)" % (weather['current']['condition']['text'],weather['current']['temp_f'])
         print "It actually feels like %s (f)." % weather['current']['feelslike_f']
+    # prints out data of the location the user wanted in Celsius
     else:
         print "Here is the current weather for %s, %s" % (weather['location']['name'],weather['location']['region'])
         print "%s, and %s degrees (c)" % (weather['current']['condition']['text'],weather['current']['temp_c'])
@@ -22,12 +29,17 @@ def printOut(degrees, weather):
 
 # this varifies that user enter valid data for the type of degrees
 def degreeType(degrees):
+    #variables
     degreeagain = False
+    # see if user followed the direction and entered a f or c for the type of degrees wanted
     if(degrees.lower() == "f" or degrees.lower() == "c"):
         degreesagain = False
     else:
         degreeagain = True
+    # returns true or false to show if the user did what was ask of them to enter an f or c for degrees
     return degreeagain
+    
+# main function
 def main():
     #variables
     valid = True
@@ -47,7 +59,7 @@ def main():
         degrees = Epic.userString("Do you want to read in as Fahrenheit (f) or Celsius (c)")
         # calls degreeagain to make sure entry was valid
         degreeagain = degreeType(degrees)
-        # if entry is invalid keeps asking for correct entry.
+        # if entry is invalid keeps asking for correct entry.tat
         while (degreeagain):
             degrees = Epic.userString("You entered an invalid entry. Do you want to read in as Fahrenheit (f) or Celsius (c)")
             degreeagain = degreeType(degrees)
