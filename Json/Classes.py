@@ -31,7 +31,6 @@ def professor(classes):
             for classes in classinfo["Class"]:
                 strC = classes
                 dataClass.append(strC)
-
 # this gets each grade and stores it into an array to printout                
             for grade in classinfo["Grade"]:
                 strG = grade
