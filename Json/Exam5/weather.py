@@ -46,18 +46,6 @@ def getLocation():
     #gets the url 
     return 'https://api.apixu.com/v1/current.json?key=2ff34f2dde774cfbb8a40000171804&q=' + area
     
-# this ask the user if they want to search again    
-def runProgramAgain():
-    return Epic.userString("Want to check another location? (y/n) ")
-# this is what keeps the program in the loop or breaks from it.
-def endOrContinue(valid):
-    while (not valid):
-        searchAgain =  Epic.userString("Please enter a valid answer. do you want to check another location? (y/n) ")
-        run(searchAgain)
-    if searchAgain == "y":
-        return True
-    else:
-        return  False  
 def main():
     #variables
     valid = True
@@ -86,15 +74,18 @@ def main():
         while (degreeagain):
             degrees = Epic.userString("You entered an invalid entry. Do you want to read in as Fahrenheit (f) or Celsius (c)")
             degreeagain = degreeType(degrees)
-            
         #this is the print out of data section
         printOut(degrees, weather)
-        
         # sees if users wants to run again
-        searchAgain = runProgramAgain()
+        searchAgain =  Epic.userString("Want to check another location? (y/n) ")
         run(searchAgain)
-        
         # this is what keeps the program in the loop or breaks from it.
-        runagain = runProgramAgain(valid)
+        while (not valid):
+            searchAgain =  Epic.userString("Please enter a valid answer. do you want to check another location? (y/n) ")
+            run(searchAgain)
+        if searchAgain == "y":
+            continue
+        else:
+            runagain = False
 #calls main function
 main ()
