@@ -36,10 +36,28 @@ def degreeType(degrees):
         degreesagain = False
     else:
         degreeagain = True
-    # returns true or false to show if the user did what was ask of them to enter an f or c for degrees
+    # returns true or false to show if the user did what was ask of them to enter an
     return degreeagain
     
-# main function
+# this sees if user entered a valid location
+def getLocation():
+    #gets the area the users wants to look for
+    area = Epic.userString("Please enter a zip code or a city name: ")
+    #gets the url 
+    return 'https://api.apixu.com/v1/current.json?key=2ff34f2dde774cfbb8a40000171804&q=' + area
+    
+# this ask the user if they want to search again    
+def runProgramAgain():
+    return Epic.userString("Want to check another location? (y/n) ")
+# this is what keeps the program in the loop or breaks from it.
+def endOrContinue(valid):
+    while (not valid):
+        searchAgain =  Epic.userString("Please enter a valid answer. do you want to check another location? (y/n) ")
+        run(searchAgain)
+    if searchAgain == "y":
+        return True
+    else:
+        return  False  
 def main():
     #variables
     valid = True
@@ -47,11 +65,16 @@ def main():
     degreeagain = False
     #runs until users doesnt want to do so 
     while runagain:
-        #gets the area the users wants to look for
-        area = Epic.userString("Please enter a zip code or a city name: ")
-        #gets the url 
-        url = 'https://api.apixu.com/v1/current.json?key=2ff34f2dde774cfbb8a40000171804&q=' + area
+        url = getLocation()
         #reads in the url 
+        while True:
+            try:
+                jsonTxt = urllib2.urlopen(url).read()
+                break
+            except: #HTTPException as e:
+                print("Oops!  That didnt work.  Try again...")
+                url = getLocation()                
+        # this reads the url into json to be converted to python
         jsonTxt = urllib2.urlopen(url).read()
         #convers url to json
         weather = json.loads(jsonTxt)
@@ -63,18 +86,15 @@ def main():
         while (degreeagain):
             degrees = Epic.userString("You entered an invalid entry. Do you want to read in as Fahrenheit (f) or Celsius (c)")
             degreeagain = degreeType(degrees)
+            
         #this is the print out of data section
         printOut(degrees, weather)
+        
         # sees if users wants to run again
-        searchAgain =  Epic.userString("Want to check another location? (y/n) ")
+        searchAgain = runProgramAgain()
         run(searchAgain)
+        
         # this is what keeps the program in the loop or breaks from it.
-        while (not valid):
-            searchAgain =  Epic.userString("Please enter a valid answer. do you want to check another location? (y/n) ")
-            run(searchAgain)
-        if searchAgain == "y":
-            continue
-        else:
-            runagain = False
+        runagain = runProgramAgain(valid)
 #calls main function
 main ()
